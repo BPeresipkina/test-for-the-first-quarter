@@ -8,3 +8,16 @@
 // ["1234", "1567", "-2", "computer science"] -> ["-2"]
 // ["Russia", "Denmark", "Kazan"] -> []
 
+Console.WriteLine("Введите строк ввода: ");
+int n = Convert.ToInt32(Console.ReadLine());
+
+string[] massive = new string [n];
+
+for(int i = 0; i < n; i++)
+{
+Console.WriteLine("Введите данные: ");
+massive[i] = Console.ReadLine();
+}
+
+Console.WriteLine($"[{string.Join(", ", massive)}]");
+
