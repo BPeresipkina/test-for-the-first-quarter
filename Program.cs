@@ -11,13 +11,31 @@
 Console.WriteLine("Введите строк ввода: ");
 int n = Convert.ToInt32(Console.ReadLine());
 
-string[] massive = new string [n];
+string[] massive = new string[n];
+string fact = "";
+int m = 0; //кол-во элементов меньше 4 символов
+int j = 0;
 
-for(int i = 0; i < n; i++)
+for (int i = 0; i < n; i++)
 {
-Console.WriteLine("Введите данные: ");
-massive[i] = Console.ReadLine();
+    Console.WriteLine("Введите данные: ");
+    fact = Console.ReadLine();
+    if (fact.Length < 4) m++;
+    massive[i] = fact;
 }
 
 Console.WriteLine($"[{string.Join(", ", massive)}]");
+// Console.WriteLine(m);
 
+string[] finalMassive = new string[m];
+for (int i = 0; i < n; i++)
+{
+    fact = massive[i];
+    if (fact.Length < 4)
+    {
+        finalMassive[j] = fact;
+        j++;
+    }
+}
+
+Console.WriteLine($"[{string.Join(", ", finalMassive)}]");
